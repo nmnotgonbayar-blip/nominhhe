@@ -6,12 +6,12 @@
 }
 
 :root {
-    --bg-color: #050505; /* Deep black */
+    --bg-color: #080205; /* Deep violet-black */
     --text-primary: #f8f8f8; 
     --text-secondary: #aaaaaa; 
     --accent-color: #ff2a6d; /* Neon Pink */
     --accent-gold: #ff76a3; /* Light pink */
-    --glass-bg: rgba(255, 255, 255, 0.03); 
+    --glass-bg: rgba(255, 255, 255, 0.02); 
     --glass-border: rgba(255, 42, 109, 0.15); 
 }
 
@@ -21,6 +21,44 @@ html {
     background-color: var(--bg-color);
     color: var(--text-primary);
     overflow-x: hidden;
+    cursor: none; /* Hide default cursor */
+}
+
+/* Custom Cursor */
+.cursor {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background 0.3s;
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 42, 109, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s;
+}
+
+.cursor.active {
+    width: 0;
+    height: 0;
+}
+
+.cursor-follower.active {
+    width: 60px;
+    height: 60px;
+    border-color: #fff;
+    background: rgba(255, 42, 109, 0.1);
 }
 
 /* Editorial Typography */
@@ -76,19 +114,33 @@ a {
 /* Creative Cards */
 .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
-    border-radius: 8px; /* More modern, sharper edges for fashion */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
     padding: 40px;
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 0 1px var(--glass-border);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transform: skewX(-20deg);
+    transition: 0.7s;
+}
+
+.glass-card:hover::before {
+    left: 150%;
 }
 
 .glass-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255, 42, 109, 0.4);
-    box-shadow: 0 20px 40px rgba(255, 42, 109, 0.15); 
+    box-shadow: 0 20px 40px rgba(255, 42, 109, 0.15), inset 0 0 0 1px rgba(255, 42, 109, 0.5); 
 }
 
 /* Navigation */
@@ -647,14 +699,4 @@ footer {
     }
 }
 
-/* Animation Classes */
-.fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* Removed old animation classes */
