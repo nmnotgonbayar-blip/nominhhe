@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomin | Stylist & Makeup Artist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Background Animation Elements -->
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">N<span>OMIN</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Эхлэл <span class="ko-nav">홈</span></a></li>
+            <li><a href="#about">Миний тухай <span class="ko-nav">소개</span></a></li>
+            <li><a href="#portfolio">Бүтээл <span class="ko-nav">포트폴리오</span></a></li>
+            <li><a href="#contact">Холбоо барих <span class="ko-nav">연락처</span></a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h3 class="subtitle">Уран бүтээлч <span class="ko-sub">아티스트</span></h3>
+            <h1 class="title">NOMIN<br><span class="ko-title">노민</span></h1>
+            <p class="profession">Мэргэжлийн Стилист & Нүүр Будагч <br><span class="ko-prof">전문 스타일리스트 & 메이크업 아티스트</span></p>
+            <div class="cta-buttons">
+                <a href="#portfolio" class="btn primary">Бүтээлүүд үзэх <span class="ko-btn">포트폴리오 보기</span></a>
+                <a href="#contact" class="btn secondary">Холбоо барих <span class="ko-btn">연락하기</span></a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="image-wrapper">
+                <img src="assets/nominn.jpg" alt="Nomin Profile">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-title">
+            <h2>Миний тухай <br><span class="ko-sec">나에 대하여</span></h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text glass-card">
+                <p>
+                    Би бол 26 настай, БНСУ-д суралцахаар ирээд 2 жил хагас болж буй Монгол оюутан. Би Монголд байхдаа стилист, нүүр будагчаар бакалавр хамгаалж, мэргэжлээрээ 2 жил ажилласан. Бага байхаасаа л зураг зурах дуртай байлаа. Монголд байх хугацаандаа кино, клип, сурталчилгааны зураг авалтуудад стилист, нүүр будагчаар ажиллаж байсан туршлагатай.
+                </p>
+                <p class="ko-text">
+                    저는 26세이며 한국에 유학 온 지 2년 반 된 몽골 유학생입니다. 몽골에서 스타일리스트 및 메이크업 전공으로 학사를 마치고 2년 동안 일했으며, 어릴 적부터 그림 그리는 것을 좋아했습니다. 몽골에 있을 때 영화, 뮤직비디오, 광고 촬영장에서 스타일리스트와 메이크업 아티스트로 일한 경험이 있습니다.
+                </p>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-box glass-card">
+                    <i class="fa-solid fa-paintbrush"></i>
+                    <h3>Нүүр будалт <br><span class="ko-skill">메이크업</span></h3>
+                    <p>Мэргэжлийн түвшинд <br><span class="ko-desc">전문적인 수준</span></p>
+                </div>
+                <div class="skill-box glass-card">
+                    <i class="fa-solid fa-scissors"></i>
+                    <h3>Стилист <br><span class="ko-skill">스타일링</span></h3>
+                    <p>Кино, клип, сурталчилгаа <br><span class="ko-desc">영화, 뮤비, 광고</span></p>
+                </div>
+                <div class="skill-box glass-card">
+                    <i class="fa-solid fa-palette"></i>
+                    <h3>Уран зураг <br><span class="ko-skill">그림 & 스케치</span></h3>
+                    <p>Бага насны хобби <br><span class="ko-desc">어릴 적부터의 취미</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="section-title">
+            <h2>Бүтээлүүд <br><span class="ko-sec">포트폴리오</span></h2>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item glass-card">
+                <img src="assets/zurag1.jpeg" alt="Makeup Portfolio">
+                <div class="portfolio-info">
+                    <h3>Нүүр будалт <br><span class="ko-port">메이크업 아트</span></h3>
+                    <p>Төрөл бүрийн зураг авалтын нүүр будалт <br><span class="ko-port-desc">다양한 촬영용 메이크업</span></p>
+                </div>
+            </div>
+            <div class="portfolio-item glass-card">
+                <img src="assets/zurag2.jpeg" alt="Drawing Portfolio">
+                <div class="portfolio-info">
+                    <h3>Уран зураг <br><span class="ko-port">그림 및 일러스트</span></h3>
+                    <p>Миний зурсан зургууд <br><span class="ko-port-desc">제가 직접 그린 작품들</span></p>
+                </div>
+            </div>
+            <div class="portfolio-item glass-card">
+                <img src="assets/zurag3.jpeg" alt="Styling Portfolio">
+                <div class="portfolio-info">
+                    <h3>Стилист <br><span class="ko-port">패션 스타일링</span></h3>
+                    <p>Хувцас загвар, дүр төрх бүрдүүлэлт <br><span class="ko-port-desc">패션 및 캐릭터 스타일링</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-title">
+            <h2>Холбоо барих <br><span class="ko-sec">연락처</span></h2>
+        </div>
+        <div class="contact-content glass-card">
+            <div class="contact-info">
+                <h3>Хамтран ажиллацгаая! <br><span class="ko-contact">함께 일해요!</span></h3>
+                <p>Надтай холбогдохыг хүсвэл доорх хаягууд руу бичээрэй.<br><span class="ko-text">저와 연락하고 싶으시다면 아래의 연락처를 이용해 주세요.</span></p>
+                
+                <ul class="social-links">
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> @nomin_stylist</a></li>
+                    <li><a href="#"><i class="fa-solid fa-envelope"></i> nomin@example.com</a></li>
+                    <li><a href="#"><i class="fa-solid fa-phone"></i> +82 10-XXXX-XXXX</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Nomin Portfolio. Бүх эрх хуулиар хамгаалагдсан. <br><span class="ko-footer">모든 권리 보유.</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
