@@ -46,7 +46,7 @@ const translations = {
         guide_page_title: "Хөтөч, Орчуулагч", guide_page_sub: "Таны аялалыг саадгүй, дурсамжтай болгох мэргэжлийн хөтөч нар",
         guide_1_name: "Бат-Эрдэнэ (Англи хэлтэй)", guide_1_loc: "Монгол орон даяар", guide_1_desc: "10 гаруй жилийн туршлагатай, байгаль түүхийн өргөн мэдлэгтэй ахлах хөтөч.",
         guide_2_name: "Сарнай (Солонгос хэлтэй)", guide_2_loc: "Улаанбаатар болон ойр орчим", guide_2_desc: "Солонгос жуулчдад зориулсан тусгай хөтөлбөр гаргагч, найрсаг хөтөч.",
-        guide_3_name: "Ганболд (Мэргэжлийн гэрэл зурагчин, хөтөч)", guide_3_loc: "Говь болон баруун аймгууд", guide_3_desc: "Байгалийн гэрэл зураг авах дуртай аялагчдад зориулсан тусгай хөтөч."
+        guide_3_name: "Ган-Өлзий (Гэрэл зурагчин)", guide_3_loc: "Говь болон баруун аймгууд", guide_3_desc: "Байгалийн хосгүй өнгө төрхийг дурандаа буулгагч мэргэжлийн гэрэл зурагчин."
     },
     ko: {
         nav_home: "홈", nav_services: "서비스", nav_featured: "추천", nav_contact: "연락처", nav_signin: "로그인",
@@ -95,7 +95,7 @@ const translations = {
         guide_page_title: "가이드 및 통역", guide_page_sub: "여행을 원활하고 기억에 남게 만들어 줄 전문 가이드",
         guide_1_name: "바트에르데네 (영어 지원)", guide_1_loc: "몽골 전역", guide_1_desc: "10년 이상의 경험과 자연 및 역사에 대한 풍부한 지식을 갖춘 수석 가이드.",
         guide_2_name: "사르나이 (한국어 지원)", guide_2_loc: "울란바토르 및 인근", guide_2_desc: "한국 관광객을 위한 특별 프로그램 제공, 친절 가이드.",
-        guide_3_name: "간볼드 (전문 사진작가)", guide_3_loc: "고비 및 서부 지역", guide_3_desc: "자연 사진 촬영을 좋아하는 여행객을 위한 특별 가이드."
+        guide_3_name: "간울지 (전문 사진작가)", guide_3_loc: "고비 및 서부 지역", guide_3_desc: "여행의 순간을 영원히 간직하고 싶은 분들을 위한 전문 사진작가."
     },
     en: {
         nav_home: "Home", nav_services: "Services", nav_featured: "Featured", nav_contact: "Contact", nav_signin: "Sign In",
@@ -144,7 +144,7 @@ const translations = {
         guide_page_title: "Local Guides", guide_page_sub: "Professional guides to make your trip smooth and memorable",
         guide_1_name: "Bat-Erdene (English Speaking)", guide_1_loc: "All over Mongolia", guide_1_desc: "Senior guide with over 10 years of experience and extensive knowledge of nature and history.",
         guide_2_name: "Sarnai (Korean Speaking)", guide_2_loc: "Ulaanbaatar and surrounding areas", guide_2_desc: "Friendly guide offering special programs for Korean tourists.",
-        guide_3_name: "Ganbold (Professional Photographer)", guide_3_loc: "Gobi and western regions", guide_3_desc: "Special guide for travelers who love taking nature photography."
+        guide_3_name: "Ganulzii (Photographer)", guide_3_loc: "Gobi and western regions", guide_3_desc: "Professional photographer capturing the unique beauty of nature."
     }
 };
 
@@ -310,6 +310,11 @@ function renderListings(category, locationFilter) {
     
     // Render HTML
     filteredItems.forEach(item => {
+        let extraAction = '';
+        if (item.id === 'guide3') {
+            extraAction = `<a href="https://www.instagram.com/ganulzii_photographer?igsh=NGZ6cXVlYmIzYnR4" target="_blank" class="btn-outline" style="margin-top:15px; display:block; text-align:center;"><i class="fa-brands fa-instagram"></i> Инстаграм үзэх</a>`;
+        }
+
         const cardHTML = `
             <div class="listing-card glass-panel">
                 <div class="listing-img" style="background-image: url('${item.img}');"></div>
@@ -325,6 +330,7 @@ function renderListings(category, locationFilter) {
                         <div class="price"><span class="amount" data-price="${item.price}"></span> <span class="per-night" data-i18n="${item.unitKey}"></span></div>
                         <button class="btn-primary btn-book" data-i18n="book_now"></button>
                     </div>
+                    ${extraAction}
                 </div>
             </div>
         `;
