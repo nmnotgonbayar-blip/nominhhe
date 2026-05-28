@@ -3,150 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nomin | Stylist & Makeup Artist</title>
+    <title>iMongolia | Travel & Rentals</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <!-- Background Animation Elements -->
-    <div class="bg-shape shape1"></div>
-    <div class="bg-shape shape2"></div>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">N<span>OMIN</span></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">i<span>Mongolia</span></div>
         <ul class="nav-links">
-            <li><a href="#home">Эхлэл <span class="ko-nav">홈</span></a></li>
-            <li><a href="#about">Миний тухай <span class="ko-nav">소개</span></a></li>
-            <li><a href="#portfolio">Бүтээл <span class="ko-nav">포트폴리오</span></a></li>
-            <li><a href="#contact">Холбоо барих <span class="ko-nav">연락처</span></a></li>
+            <li><a href="#home" data-i18n="nav_home">Эхлэл</a></li>
+            <li><a href="#services" data-i18n="nav_services">Үйлчилгээ</a></li>
+            <li><a href="#destinations" data-i18n="nav_featured">Онцлох</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Холбогдох</a></li>
         </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+        <div class="nav-actions">
+            <select id="lang-selector" class="lang-selector">
+                <option value="mn">🇲🇳 Монгол</option>
+                <option value="ko">🇰🇷 한국어</option>
+                <option value="en">🇬🇧 English</option>
+            </select>
+            <button class="btn-outline" data-i18n="nav_signin">Нэвтрэх</button>
+            <div class="burger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h3 class="subtitle">Уран бүтээлч <span class="ko-sub">아티스트</span></h3>
-            <h1 class="title">NOMIN<br><span class="ko-title">노민</span></h1>
-            <p class="profession">Мэргэжлийн Стилист & Нүүр Будагч <br><span class="ko-prof">전문 스타일리스트 & 메이크업 아티스트</span></p>
-            <div class="cta-buttons">
-                <a href="#portfolio" class="btn primary">Бүтээлүүд үзэх <span class="ko-btn">포트폴리오 보기</span></a>
-                <a href="#contact" class="btn secondary">Холбоо барих <span class="ko-btn">연락하기</span></a>
+            <h1 class="hero-title"><span data-i18n="hero_title1">Discover Nomadic Life</span><br><span class="hero-title-sub" data-i18n="hero_title2">Монголд Тавтай Морил</span></h1>
+            <p class="hero-subtitle" data-i18n="hero_sub">Гэр, байшин, машин, хөтөч түрээслэж жинхэнэ нүүдэлчдийн аялалыг мэдрээрэй.</p>
+            
+            <!-- Search Widget -->
+            <div class="search-widget glass-panel">
+                <div class="search-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="search-input">
+                        <label data-i18n="search_where">Хаана</label>
+                        <input type="text" id="search-location" data-i18n-placeholder="search_where_ph" placeholder="Улаанбаатар, Тэрэлж...">
+                    </div>
+                </div>
+                <div class="search-group">
+                    <i class="fa-regular fa-calendar"></i>
+                    <div class="search-input">
+                        <label data-i18n="search_dates">Огноо</label>
+                        <input type="date">
+                    </div>
+                </div>
+                <div class="search-group">
+                    <i class="fa-solid fa-user-group"></i>
+                    <div class="search-input">
+                        <label data-i18n="search_guests">Хүн</label>
+                        <select>
+                            <option data-i18n="guest_1">1 Хүн</option>
+                            <option data-i18n="guest_2">2 Хүн</option>
+                            <option data-i18n="guest_3">3-4 Хүн</option>
+                            <option data-i18n="guest_5">5+ Хүн</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i> <span data-i18n="search_btn">Хайх</span></button>
             </div>
         </div>
-        <div class="hero-image">
-            <div class="image-wrapper">
-                <img src="assets/nominn.jpg" alt="Nomin Profile">
-            </div>
-        </div>
-    </section>
+    </header>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="section-title">
-            <h2>Миний тухай <br><span class="ko-sec">나에 대하여</span></h2>
+    <!-- Categories / Services -->
+    <section id="services" class="categories-section">
+        <div class="section-header">
+            <h2 data-i18n="cat_title">Аялалын үйлчилгээнүүд</h2>
+            <p data-i18n="cat_sub">Танд хэрэгтэй бүхнийг нэг дороос</p>
         </div>
-        <div class="about-content">
-            <div class="about-text glass-card">
-                <p>
-                    Би бол 26 настай, БНСУ-д суралцахаар ирээд 2 жил хагас болж буй Монгол оюутан. Би Монголд байхдаа стилист, нүүр будагчаар бакалавр хамгаалж, мэргэжлээрээ 2 жил ажилласан. Бага байхаасаа л зураг зурах дуртай байлаа. Монголд байх хугацаандаа кино, клип, сурталчилгааны зураг авалтуудад стилист, нүүр будагчаар ажиллаж байсан туршлагатай.
-                </p>
-                <p class="ko-text">
-                    저는 26세이며 한국에 유학 온 지 2년 반 된 몽골 유학생입니다. 몽골에서 스타일리스트 및 메이크업 전공으로 학사를 마치고 2년 동안 일했으며, 어릴 적부터 그림 그리는 것을 좋아했습니다. 몽골에 있을 때 영화, 뮤직비디오, 광고 촬영장에서 스타일리스트와 메이크업 아티스트로 일한 경험이 있습니다.
-                </p>
+        <div class="categories-grid">
+            <!-- Ger Category -->
+            <div class="category-card" onclick="window.location.href='gers.html'" style="background-image: url('file:///C:/Users/313ST000/.gemini/antigravity/brain/5ffccb01-1d8f-4a98-827c-e7742677f162/rental_ger_1779332271763.png');">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <i class="fa-solid fa-campground"></i>
+                    <h3 data-i18n="cat_ger_title">Гэр Түрээс</h3>
+                    <p data-i18n="cat_ger_sub">Ger & Yurt Rentals</p>
+                </div>
             </div>
             
-            <div class="skills-container">
-                <div class="skill-box glass-card">
-                    <i class="fa-solid fa-paintbrush"></i>
-                    <h3>Нүүр будалт <br><span class="ko-skill">메이크업</span></h3>
-                    <p>Мэргэжлийн түвшинд <br><span class="ko-desc">전문적인 수준</span></p>
+            <!-- Cabin Category -->
+            <div class="category-card" onclick="window.location.href='cabins.html'" style="background-image: url('file:///C:/Users/313ST000/.gemini/antigravity/brain/5ffccb01-1d8f-4a98-827c-e7742677f162/rental_cabin_1779332415318.png');">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <i class="fa-solid fa-house-chimney-window"></i>
+                    <h3 data-i18n="cat_cabin_title">Амралтын Байшин</h3>
+                    <p data-i18n="cat_cabin_sub">Cabin & House Rentals</p>
                 </div>
-                <div class="skill-box glass-card">
-                    <i class="fa-solid fa-scissors"></i>
-                    <h3>Стилист <br><span class="ko-skill">스타일링</span></h3>
-                    <p>Кино, клип, сурталчилгаа <br><span class="ko-desc">영화, 뮤비, 광고</span></p>
+            </div>
+
+            <!-- Car Category -->
+            <div class="category-card" onclick="window.location.href='cars.html'" style="background-image: url('file:///C:/Users/313ST000/.gemini/antigravity/brain/5ffccb01-1d8f-4a98-827c-e7742677f162/rental_car_1779332436084.png');">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <i class="fa-solid fa-car-side"></i>
+                    <h3 data-i18n="cat_car_title">Машин Түрээс</h3>
+                    <p data-i18n="cat_car_sub">Offroad Car Rentals</p>
                 </div>
-                <div class="skill-box glass-card">
-                    <i class="fa-solid fa-palette"></i>
-                    <h3>Уран зураг <br><span class="ko-skill">그림 & 스케치</span></h3>
-                    <p>Бага насны хобби <br><span class="ko-desc">어릴 적부터의 취미</span></p>
+            </div>
+
+            <!-- Hotel Category -->
+            <div class="category-card" onclick="window.location.href='hotels.html'" style="background-image: url('file:///C:/Users/313ST000/.gemini/antigravity/brain/5ffccb01-1d8f-4a98-827c-e7742677f162/rental_hotel_1779332468909.png');">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <i class="fa-solid fa-hotel"></i>
+                    <h3 data-i18n="cat_hotel_title">Зочид Буудал</h3>
+                    <p data-i18n="cat_hotel_sub">Hotel Booking</p>
+                </div>
+            </div>
+            
+            <!-- Guide Category -->
+            <div class="category-card" onclick="window.location.href='guides.html'" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <i class="fa-solid fa-person-hiking"></i>
+                    <h3 data-i18n="cat_guide_title">Хөтөч, Орчуулагч</h3>
+                    <p data-i18n="cat_guide_sub">Local Guides</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="section-title">
-            <h2>Бүтээлүүд <br><span class="ko-sec">포트폴리오</span></h2>
+    <!-- Featured Listings -->
+    <section id="destinations" class="categories-section">
+        <div class="section-header">
+            <h2 data-i18n="feat_listings_title">Онцлох Саналууд</h2>
+            <p data-i18n="feat_listings_sub">Шилдэг үнэлгээтэй байрлах газрууд</p>
         </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-item glass-card">
-                <img src="assets/zurag1.jpeg" alt="Makeup Portfolio">
-                <div class="portfolio-info">
-                    <h3>Нүүр будалт <br><span class="ko-port">메이크업 아트</span></h3>
-                    <p>Төрөл бүрийн зураг авалтын нүүр будалт <br><span class="ko-port-desc">다양한 촬영용 메이크업</span></p>
+        <div class="listing-section" style="flex-direction: column; padding: 0;">
+            <div class="listings">
+                <!-- Listing 1 -->
+                <div class="listing-card glass-panel" style="padding:0; border-radius:16px; overflow:hidden;">
+                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="listing-info">
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span>(4.9)</span></div>
+                        <h3>Тэрэлж Тансаг Гэр Бааз</h3>
+                        <div class="location"><i class="fa-solid fa-location-dot"></i> Горхи-Тэрэлжийн байгалийн цогцолборт газар</div>
+                        <p class="desc">Орчин үеийн тохижилттой, халаалттай, өөрийн ариун цэврийн өрөөтэй тансаг зэрэглэлийн гэр.</p>
+                        <div class="price-action">
+                            <div class="price">
+                                <div class="amount">₮250,000</div>
+                                <div class="per-night">/ 1 шөнө</div>
+                            </div>
+                            <button class="btn-primary btn-book">Захиалах</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="portfolio-item glass-card">
-                <img src="assets/zurag2.jpeg" alt="Drawing Portfolio">
-                <div class="portfolio-info">
-                    <h3>Уран зураг <br><span class="ko-port">그림 및 일러스트</span></h3>
-                    <p>Миний зурсан зургууд <br><span class="ko-port-desc">제가 직접 그린 작품들</span></p>
-                </div>
-            </div>
-            <div class="portfolio-item glass-card">
-                <img src="assets/zurag3.jpeg" alt="Styling Portfolio">
-                <div class="portfolio-info">
-                    <h3>Стилист <br><span class="ko-port">패션 스타일링</span></h3>
-                    <p>Хувцас загвар, дүр төрх бүрдүүлэлт <br><span class="ko-port-desc">패션 및 캐릭터 스타일링</span></p>
+
+                <!-- Listing 2 -->
+                <div class="listing-card glass-panel" style="padding:0; border-radius:16px; overflow:hidden;">
+                    <div class="listing-img" style="background-image: url('https://images.unsplash.com/photo-1542718610-a1d656d1884c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="listing-info">
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> <span>(4.5)</span></div>
+                        <h3>Хөвсгөл Lake Resort</h3>
+                        <div class="location"><i class="fa-solid fa-location-dot"></i> Хөвсгөл нуур, Хатгал</div>
+                        <p class="desc">Хөвсгөл нуурын эрэг дээр байрлах байгалийн үзэсгэлэнт харагдацтай модон хаус.</p>
+                        <div class="price-action">
+                            <div class="price">
+                                <div class="amount">₮180,000</div>
+                                <div class="per-night">/ 1 шөнө</div>
+                            </div>
+                            <button class="btn-primary btn-book">Захиалах</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="section-title">
-            <h2>Холбоо барих <br><span class="ko-sec">연락처</span></h2>
+    <!-- Why Choose Us -->
+    <section class="features">
+        <div class="feature-box">
+            <i class="fa-solid fa-earth-americas"></i>
+            <h4 data-i18n="feat1_title">Дэлхийн хаанаас ч</h4>
+            <p data-i18n="feat1_sub">Олон улсын төлбөрийн систем, хэлний сонголттой.</p>
         </div>
-        <div class="contact-content glass-card">
-            <div class="contact-info">
-                <h3>Хамтран ажиллацгаая! <br><span class="ko-contact">함께 일해요!</span></h3>
-                <p>Надтай холбогдохыг хүсвэл доорх хаягууд руу бичээрэй.<br><span class="ko-text">저와 연락하고 싶으시다면 아래의 연락처를 이용해 주세요.</span></p>
-                
-                <ul class="social-links">
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i> @nomin_stylist</a></li>
-                    <li><a href="#"><i class="fa-solid fa-envelope"></i> nomin@example.com</a></li>
-                    <li><a href="#"><i class="fa-solid fa-phone"></i> +82 10-XXXX-XXXX</a></li>
-                </ul>
-            </div>
+        <div class="feature-box">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h4 data-i18n="feat2_title">Найдвартай</h4>
+            <p data-i18n="feat2_sub">Баталгаажсан түрээслүүлэгч, чанарын өндөр стандарт.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fa-solid fa-headset"></i>
+            <h4 data-i18n="feat3_title">24/7 Тусламж</h4>
+            <p data-i18n="feat3_sub">Монгол болон Англи хэл дээр тасралтгүй үйлчилгээ.</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Nomin Portfolio. Бүх эрх хуулиар хамгаалагдсан. <br><span class="ko-footer">모든 권리 보유.</span></p>
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="logo">i<span>Mongolia</span></div>
+            <p data-i18n="footer_desc">Монгол улсын аялал жуулчлал, түрээсийн нэгдсэн платформ.</p>
+            <div class="socials">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+        <div class="copyright">
+            <p data-i18n="footer_copy">&copy; 2026 iMongolia Platform. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <!-- GSAP & Vanilla Tilt -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="modal-content glass-panel">
+            <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
+            <h2>Захиалга өгөх</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label>Овог нэр</label>
+                    <input type="text" required placeholder="Таны нэр">
+                </div>
+                <div class="form-group">
+                    <label>Утасны дугаар</label>
+                    <input type="tel" required placeholder="9911XXXX">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Орох өдөр</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Гарах өдөр</label>
+                        <input type="date" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Зочдын тоо</label>
+                    <input type="number" min="1" value="1" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%; margin-top:10px;">Баталгаажуулах</button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

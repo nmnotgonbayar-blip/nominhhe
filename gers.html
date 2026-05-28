@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gers | iMongolia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="inner-page">
+    <!-- Navbar -->
+    <nav class="navbar scrolled">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='index.html'">i<span>Mongolia</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav_home">Эхлэл</a></li>
+            <li><a href="index.html#services" data-i18n="nav_services">Үйлчилгээ</a></li>
+            <li><a href="index.html#destinations" data-i18n="nav_featured">Онцлох</a></li>
+            <li><a href="index.html#contact" data-i18n="nav_contact">Холбогдох</a></li>
+        </ul>
+        <div class="nav-actions">
+            <select id="lang-selector" class="lang-selector">
+                <option value="mn">🇲🇳 Монгол</option>
+                <option value="ko">🇰🇷 한국어</option>
+                <option value="en">🇬🇧 English</option>
+            </select>
+            <button class="btn-outline" data-i18n="nav_signin">Нэвтрэх</button>
+            <div class="burger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1 data-i18n="ger_page_title">Гэр Түрээс</h1>
+        <p data-i18n="ger_page_sub">Уламжлалт нүүдэлчин ахуйг мэдрүүлэх гэрүүд</p>
+    </header>
+
+    <!-- Listing Section -->
+    <section class="listing-section" data-category="gers">
+        <div class="filters glass-panel">
+            <h3 data-i18n="filter_title">Шүүлтүүр</h3>
+            <div class="filter-group">
+                <label data-i18n="filter_city">Хот/Аймаг</label>
+                <select id="location-filter">
+                    <option value="all" data-i18n="filter_all">Бүгд</option>
+                    <option value="terelj" data-i18n="loc_terelj">Тэрэлж</option>
+                    <option value="tsonjin" data-i18n="loc_tsonjin">Цонжин болдог</option>
+                    <option value="khamar" data-i18n="loc_khamar">Хамрын хийд</option>
+                    <option value="khyargas" data-i18n="loc_khyargas">Хяргас нуур</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="listings" id="dynamic-listings">
+            <!-- Rendered by JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="logo">i<span>Mongolia</span></div>
+            <p data-i18n="footer_desc">Монгол улсын аялал жуулчлал, түрээсийн нэгдсэн платформ.</p>
+            <div class="socials">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+        <div class="copyright">
+            <p data-i18n="footer_copy">&copy; 2026 iMongolia Platform. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
