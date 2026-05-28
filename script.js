@@ -230,31 +230,52 @@ document.addEventListener('DOMContentLoaded', () => {
     // Modal Logic with Event Delegation
     const bookingModal = document.getElementById('bookingModal');
     const bookingForm = document.getElementById('bookingForm');
+    const loginModal = document.getElementById('loginModal');
+    const loginForm = document.getElementById('loginForm');
     
     document.addEventListener('click', (e) => {
-        // Open modal
+        // Open booking modal
         if (e.target.classList.contains('btn-book') || e.target.closest('.btn-book') || (e.target.getAttribute('data-i18n') === 'book_now')) {
             if (bookingModal) bookingModal.classList.add('show');
+        }
+        
+        // Open login modal
+        if (e.target.getAttribute('data-i18n') === 'nav_signin' || e.target.closest('[data-i18n="nav_signin"]')) {
+            if (loginModal) loginModal.classList.add('show');
         }
         
         // Close modal (x button)
         if (e.target.classList.contains('close-modal') || e.target.closest('.close-modal')) {
             if (bookingModal) bookingModal.classList.remove('show');
+            if (loginModal) loginModal.classList.remove('show');
         }
         
         // Close modal (clicking outside)
         if (e.target === bookingModal) {
             bookingModal.classList.remove('show');
         }
+        if (e.target === loginModal) {
+            loginModal.classList.remove('show');
+        }
     });
 
-    // Handle form submit
+    // Handle booking submit
     if(bookingForm) {
         bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Захиалга амжилттай илгээгдлээ! Бид тантай удахгүй холбогдох болно.');
             bookingModal.classList.remove('show');
             bookingForm.reset();
+        });
+    }
+
+    // Handle login submit
+    if(loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Амжилттай нэвтэрлээ!');
+            loginModal.classList.remove('show');
+            loginForm.reset();
         });
     }
 });
